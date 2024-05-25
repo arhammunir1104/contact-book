@@ -22,7 +22,7 @@ function Login() {
             setUserInput({
                 ...userInput,
                 [name] : value
-            });
+            })
         }
         catch(e){
             console.log("Input Error", e);
@@ -32,19 +32,20 @@ function Login() {
     async function handleSubmit(e){
         try{
             e.preventDefault();
-            console.log(userInput);
+            // console.log(userInput);
             let data = await fetch("https://contact-book-apis.vercel.app/login",{
             mode: 'no-cors',
             method : "POST",
             headers: {
+                "Access-Control-Allow-Headers" : "Content-Type",
+                 "Access-Control-Allow-Origin": "*",
                'Content-Type': 'application/json',
-                "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PATCH"
             },
             body: JSON.stringify(userInput)
           })
           let res= await data.json();
-          console.log(data);
-          console.log(res);
+        //   console.log(data);
+        //   console.log(res);
           if(res.verified || res.verified === true){
             localStorage.setItem("token", res.token);
             toast.success(res.msg, {
