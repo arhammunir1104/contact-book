@@ -36,7 +36,10 @@ function Login() {
             let data = await fetch("https://contact-book-apis.vercel.app/login",{
             method : "POST",
             headers: {
-              "Content-Type" : "application/json"
+                "Access-Control-Allow-Headers" : "Content-Type",
+                 "Access-Control-Allow-Origin": "*",
+               'Content-Type': 'application/json',
+                "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PATCH"
             },
             body: JSON.stringify(userInput)
           })
