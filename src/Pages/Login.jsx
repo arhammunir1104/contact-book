@@ -42,9 +42,9 @@ function Login() {
                'Content-Type': 'application/json',
             },
             body: JSON.stringify(userInput)
-          })
-          let res= await data.json();
+          });
           console.log(data);
+          let res= await data.json();
         //   console.log(res);
           if(res.verified || res.verified === true){
             localStorage.setItem("token", res.token);
