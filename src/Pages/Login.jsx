@@ -99,7 +99,7 @@ function Login() {
                     <input type="password" name='password' value={userInput.password} onChange={handleInput} id='password'  className='bordr-2 border-black rounded-[3px] my-[3px]  outline-none placeholder:text-custom_grey px-[2%] py-[2%]' placeholder='Enter your Password' style={border_input} />
                 </label>
 
-                <button type='submit' className='mx-[5vw] my-[7%] rounded-[5px] text-custom_white bg-custom_dark_green duration-[.4s] ease-in-out hover:bg-custom_green shadow-custom_dark py-[1%]'>Register</button>
+                <button type='submit' className='mx-[5vw] my-[7%] rounded-[5px] text-custom_white bg-custom_dark_green duration-[.4s] ease-in-out hover:bg-custom_green shadow-custom_dark py-[1%]'>Login</button>
             </form>
 
             <div>
