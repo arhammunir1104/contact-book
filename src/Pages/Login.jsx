@@ -32,7 +32,7 @@ function Login() {
     async function handleSubmit(e){
         try{
             e.preventDefault();
-            // console.log(userInput);
+            console.log(userInput);
             let data = await fetch("https://contact-book-apis.vercel.app/login",{
             mode: 'no-cors',
             method : "POST",
@@ -44,7 +44,7 @@ function Login() {
             body: JSON.stringify(userInput)
           })
           let res= await data.json();
-        //   console.log(data);
+          console.log(data);
         //   console.log(res);
           if(res.verified || res.verified === true){
             localStorage.setItem("token", res.token);
