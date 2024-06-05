@@ -1,7 +1,7 @@
 import React , {useState} from 'react'
 import { NavLink , useNavigate} from 'react-router-dom';
 import { toast } from 'react-toastify';
-
+import axios from 'axios';
 
 let border_input = {
     border: ".5px solid #424242"
@@ -37,12 +37,11 @@ function Login() {
             mode: 'no-cors',
             method : "POST",
             headers: {
-                "Access-Control-Allow-Headers" : "Content-Type",
-                 "Access-Control-Allow-Origin": "*",
-               'Content-Type': 'application/json',
+               "Content-Type": "application/json",
             },
             body: JSON.stringify(userInput)
           });
+        // const data = await axios.post('https://contact-book-apis.vercel.app/login', userInput);
           console.log(data);
           let res= await data.json();
         //   console.log(res);

@@ -65,7 +65,7 @@ function Contacts() {
         // console.log(token);
         async function v(){
             try{
-                let data = await fetch("https://contact-book-apis.vercel.app//verify",{
+                let data = await fetch("https://contact-book-apis.vercel.app/verify",{
                 method : "POST",
                 headers: {
                 "Content-Type" : "application/json"
