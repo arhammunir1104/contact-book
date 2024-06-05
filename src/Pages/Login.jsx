@@ -34,7 +34,6 @@ function Login() {
             e.preventDefault();
             console.log(userInput);
             let data = await fetch("https://contact-book-apis.vercel.app/login",{
-            mode: 'no-cors',
             method : "POST",
             headers: {
                "Content-Type": "application/json",
