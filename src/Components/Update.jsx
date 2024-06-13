@@ -124,8 +124,10 @@ async function handleSubmit(e, i){
             theme: "light",
             });
 
-          handleClose()
+          handleClose();
+          setTimeout(()=>{
           window.location.reload();
+          }, 1200);
 
         }
         else{

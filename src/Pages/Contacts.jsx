@@ -81,7 +81,7 @@ function Contacts() {
                     navigate("/login");
                 }
                 else{
-                    let data = await fetch("https://contact-book-apis.vercel.app//getContacts",{
+                    let data = await fetch("https://contact-book-apis.vercel.app/getContacts",{
                       method : "POST",
                       headers: {
                         "Content-Type" : "application/json"

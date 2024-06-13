@@ -105,7 +105,7 @@ function handleInput(e){
         email: userInput.email,
         phone: userInput.phone
       }
-      let data = await fetch("contact-book-apis.vercel.app/createContact",{
+      let data = await fetch("https://contact-book-apis.vercel.app/createContact",{
               method : "POST",
               headers: {
                 "Content-Type" : "application/json"
@@ -134,7 +134,9 @@ function handleInput(e){
                 });
 
               handleClose()
+              setTimeout(()=>{
               window.location.reload();
+              }, 1200);
 
             }
             else{setUserInput({

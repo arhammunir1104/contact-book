@@ -31,51 +31,52 @@ function Login() {
 
     async function handleSubmit(e){
         try{
-            alert();
             e.preventDefault();
             console.log(userInput);
-        //     let data = await fetch("https://contact-book-apis.vercel.app/login",{
-        //     method : "POST",
-        //     headers: {
-        //        "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify(userInput)
-        //   });
-        // // const data = await axios.post('https://contact-book-apis.vercel.app/login', userInput);
-        //   console.log(data);
-        //   let res= await data.json();
-        // //   console.log(res);
-        //   if(res.verified || res.verified === true){
-        //     localStorage.setItem("token", res.token);
-        //     toast.success(res.msg, {
-        //         position: "top-center",
-        //         autoClose: 1000,
-        //         hideProgressBar: false,
-        //         closeOnClick: true,
-        //         pauseOnHover: true,
-        //         draggable: true,
-        //         progress: undefined,
-        //         theme: "light",
-        //         });
-        //     navigate("/contact")
-        //     window.location.reload();
-        //   }
-        //   else{
-        //     toast.warn(res.msg, {
-        //         position: "top-center",
-        //         autoClose: 1000,
-        //         hideProgressBar: false,
-        //         closeOnClick: true,
-        //         pauseOnHover: true,
-        //         draggable: true,
-        //         progress: undefined,
-        //         theme: "light",
-        //         });
-        //     setUserInput({
-        //         ...userInput,
-        //         password : ""
-        //     })
-        //   }
+            let data = await fetch("https://contact-book-apis.vercel.app/login",{
+            method : "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userInput)
+          });
+        // const data = await axios.post('https://contact-book-apis.vercel.app/login', userInput);
+          console.log(data);
+          let res= await data.json();
+        //   console.log(res);
+          if(res.verified || res.verified === true){
+            localStorage.setItem("token", res.token);
+            toast.success(res.msg, {
+                position: "top-center",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+            navigate("/contact")
+            setTimeout(()=>{
+            window.location.reload();
+            }, 1200);
+          }
+          else{
+            toast.warn(res.msg, {
+                position: "top-center",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+            setUserInput({
+                ...userInput,
+                password : ""
+            })
+          }
 
         }
         catch(e){

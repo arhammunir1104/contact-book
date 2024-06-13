@@ -104,8 +104,10 @@ async function handleDelete(e){
               theme: "light",
               });
   
-            handleClose()
+            handleClose();
+            setTimeout(()=>{
             window.location.reload();
+            }, 1200);
   
           }
           else{
